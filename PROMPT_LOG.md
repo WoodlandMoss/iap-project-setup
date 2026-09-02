@@ -1,36 +1,38 @@
 # Prompt-and-Diff Log
 
-This log tracks every AI-assisted change made to this project, organized by
-milestone. Each entry records the prompt given to the AI tool and the
-resulting diff/commit, so it's clear what was AI-generated versus
-hand-written. A milestone with no AI involvement says so directly instead of
+This log records every AI-assisted change made to this project, organized by
+milestone. Each entry documents the prompt supplied to the AI tool and the
+resulting diff or commit, distinguishing AI-generated work from hand-written
+work. Milestones with no AI involvement are marked as such rather than
 listing prompts.
 
 **Tool used:** Claude Code (Sonnet 5)
 
 ---
 
-## Milestone 1: Repository and toolchain
+## Milestone 1: Repository and Toolchain Setup
 
 **Prompt:**
-> help me do this assignment: [pasted IAP 1 - Repository and Toolchain
-> assignment text]
+> Assist with the "IAP 1 - Repository and Toolchain" assignment, covering
+> repository creation, README content, toolchain verification, and AI tool
+> verification.
 
-**Response:** Explained what was needed and, after the working directory was
-wiped, walked through rebuilding the project step by step: `git init`,
-`npm init`, an Express app with a `/health` route, a `node --test` sanity
-suite, `.gitignore`, `README.md`, and pushing to the existing GitHub remote.
+**Response:** Outlined the assignment requirements, then scaffolded the
+project from an empty directory: initialized git, configured `package.json`
+and npm scripts, implemented a minimal Express application with a health
+check route, added a `node --test` sanity suite, created `.gitignore` and
+`README.md`, and published the repository to GitHub.
 
-**Diff:** Created `package.json`, `src/index.js`, `test/sanity.test.js`,
-`.gitignore`, `README.md`. All AI-suggested code was reviewed before
-accepting.
+**Diff:** Added `package.json`, `src/index.js`, `test/sanity.test.js`,
+`.gitignore`, and `README.md`. All generated code was reviewed before being
+accepted.
 
 **Commit:** `d11a836` — Initial project skeleton: Express + node:sqlite,
 passing test
 
-**Notes:** Concept brief and stack choice (Node/Express/SQLite) were
-confirmed with the student before being written into the README.
+**Notes:** The project concept and technology stack were confirmed by the
+author prior to being recorded in the README.
 
 ---
 
-<!-- Add new milestones below as the project progresses. -->
+<!-- Additional milestones appended below as the project progresses. -->
