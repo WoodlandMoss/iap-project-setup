@@ -37,7 +37,7 @@ Notably, its "non-functional" section was almost entirely vacuous restatements o
 ## What it got right (useful, hadn't considered)
 
 1. **Search across assignments by keyword** — I hadn't planned this, but it's a reasonable low-cost addition once a list view exists. Not adding it now (out of scope for M2), but worth a backlog note.
-2. **List view vs. an alternate view (it suggested calendar)** — the underlying point, that a flat list may not be the only useful way to look at due dates, is fair. I'm keeping list-only for this milestone but it's a legitimate future consideration.
+2. **List view vs. an alternate view (it suggested calendar)** — the underlying point, that a flat list may not be the only useful way to look at due dates, is fair.
 3. **Explicitly separating "not started" from "in progress"** — I'm rejecting the three-state model for my scope, but it correctly surfaced that binary open/completed is a real simplification decision I should be making consciously, not by default. It forced me to write US-3's acceptance criteria more precisely (idempotent "mark complete") than I would have otherwise.
 
 ## Judgment
