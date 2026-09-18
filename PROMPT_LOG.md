@@ -41,11 +41,11 @@ author prior to being recorded in the README.
 [#milestone-2-requirements-and-ai-elicitation-audit](#milestone-2-requirements-and-ai-elicitation-audit)
 
 **Prompt 1 (requirements drafting):**
-> Help think of the requirements for my app,
+> Act as an interviewer for the gathering of requirements for my IAP,
 > per the IAP M2 spec: 6-8 user stories with acceptance criteria in a
 > consistent format, plus 3 falsifiable non-functional requirements.
 
-**Response:** Gave ideas for 8 user stories (create, list, mark complete, filter
+**Response:** Interviewed ideas for 8 user stories (create, list, mark complete, filter
 by course, filter by status, edit, delete, overdue flagging) in
 Given/When/Then format, and 3 NFRs with concrete, testable thresholds
 (response time under load, data durability across restart, input
