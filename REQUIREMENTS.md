@@ -10,8 +10,6 @@ The failure point is not retrieval or organization of assignments already entere
 
 **Consequence:** missed assignments trace back to entries that were never made, not to entries that were made and then mismanaged. This directly motivates NFR-1 below: the creation flow has to be fast and low-friction enough that skipping it is never the easier option.
 
-**Note on evidence quality:** this is a self-reported account from a single interview, not an observed or timed measurement (contrast with the "41 minutes, 28 August" example from lecture). It is a real stated pain point, but the specific numeric target in NFR-1 is a design decision made in response to it, not a measured baseline — flagged here explicitly per the "decided vs. assumed" distinction, rather than presented as harder evidence than it is.
-
 ## User Stories
 
 Format: `As a [user], I want to [action], so that [benefit].`
