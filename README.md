@@ -20,6 +20,13 @@ npm test
 npm start
 ```
 
-## Docs
+## Assignments
 
-See [docs/](docs/) for requirements, AI elicitation notes, and the prompt log.
+Deliverables are organized by assignment under [`assignments/`](assignments/),
+one folder per milestone, named after its Canvas title:
+
+- [IAP M1 - Repository and Toolchain Setup](<assignments/IAP M1 - Repository and Toolchain Setup>)
+- [IAP M2 - Requirements and AI Elicitation Audit](<assignments/IAP M2 - Requirements and AI Elicitation Audit>)
+
+The cumulative [`PROMPT_LOG.md`](PROMPT_LOG.md) records every AI-assisted
+change across all milestones.
