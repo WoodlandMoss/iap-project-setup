@@ -19,3 +19,7 @@ npm install
 npm test
 npm start
 ```
+
+## Docs
+
+See [docs/](docs/) for requirements, AI elicitation notes, and the prompt log.
