@@ -1,0 +1,47 @@
+erDiagram
+    USER ||--o{ COURSE : enrolls
+    COURSE ||--o{ ASSIGNMENT : contains
+    ASSIGNMENT }o--o{ TAG : tagged_with
+    ASSIGNMENT ||--o{ REMINDER : has
+    USER ||--o{ SETTINGS : configures
+
+    USER {
+        int id PK
+        string email
+        string passwordHash
+        string displayName
+    }
+    COURSE {
+        int id PK
+        int userId FK
+        string name
+        string colorTag
+        string term
+    }
+    ASSIGNMENT {
+        int id PK
+        int courseId FK
+        string title
+        string description
+        date dueDate
+        string priority
+        string status
+        boolean overdue
+        int estimatedMinutes
+    }
+    TAG {
+        int id PK
+        string name
+    }
+    REMINDER {
+        int id PK
+        int assignmentId FK
+        datetime remindAt
+        string channel
+    }
+    SETTINGS {
+        int id PK
+        int userId FK
+        string theme
+        boolean notificationsEnabled
+    }
