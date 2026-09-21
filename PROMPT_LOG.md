@@ -111,4 +111,4 @@ comparison made at read time, not a persisted fact.
 adopted model — over-modelling, under-modelling, invented relationships, and
 what it got right).
 
-**Commit:** *(fill in after committing)*
+**Commit:** `de87c0d` — M3: domain model and AI critique
