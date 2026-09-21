@@ -75,3 +75,40 @@ asked what the project's actual constraints were).
 
 **Commit:** *(fill in after committing, e.g. `abc1234` — M2: requirements
 + elicitation audit)*
+
+---
+
+## Milestone 3: Domain Model and AI Critique
+
+**Prompt 1 (AI's first draft, cold, requirements attached):**
+> Here are the requirements for my app [`REQUIREMENTS.md` pasted in full].
+> Draft a domain model for it as a Mermaid ER diagram.
+
+**Response:** Produced a 6-entity model — `USER`, `COURSE`, `ASSIGNMENT`,
+`TAG`, `REMINDER`, `SETTINGS` — with a `USER`-owns-`COURSE`-contains-
+`ASSIGNMENT` hierarchy, a many-to-many `ASSIGNMENT`/`TAG` join, and extra
+`ASSIGNMENT` fields (`description`, `priority`, `estimatedMinutes`) not
+present in any user story.
+
+**Diff:** Added `domain-model-raw.mmd` and `DOMAIN_MODEL_RAW.md` (kept
+verbatim, unedited, as evidence).
+
+---
+
+**Prompt 2 (adopted model, separate pass):**
+> Reduce that draft to only what `REQUIREMENTS.md`'s user stories actually
+> require, tracing every entity and attribute back to a specific story or
+> NFR.
+
+**Response:** Collapsed the model to a single `ASSIGNMENT` entity (`id`,
+`title`, `course`, `dueDate`, `status`), dropping `USER`, `COURSE`,
+`SETTINGS`, `REMINDER`, and `TAG` as unsupported by any requirement, and
+explicitly excluding `overdue` as a stored column since US-8 defines it as a
+comparison made at read time, not a persisted fact.
+
+**Diff:** Added `domain-model.mmd`, `DOMAIN_MODEL.md`, and
+`DOMAIN_MODEL_CRITIQUE.md` (critique of the M3-Prompt-1 draft against the
+adopted model — over-modelling, under-modelling, invented relationships, and
+what it got right).
+
+**Commit:** `de87c0d` — M3: domain model and AI critique
