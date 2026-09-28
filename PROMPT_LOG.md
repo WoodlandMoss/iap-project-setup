@@ -137,4 +137,4 @@ database engines or add concurrency).
 `assignments/IAP M4 - ADR-001/README.md` (pointer to the ADR, since it lives
 under `docs/adr/` rather than the milestone folder).
 
-**Commit:** *(fill in after committing)*
+**Commit:** `9e57dae` — M4: ADR-001 for node:sqlite over an ORM
