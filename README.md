@@ -28,6 +28,8 @@ one folder per milestone, named after its Canvas title:
 - [IAP M1 - Repository and Toolchain Setup](<assignments/IAP M1 - Repository and Toolchain Setup>)
 - [IAP M2 - Requirements and AI Elicitation Audit](<assignments/IAP M2 - Requirements and AI Elicitation Audit>)
 - [IAP M3 - Domain Model and AI Critique](<assignments/IAP M3 - Domain Model and AI Critique>)
+- [IAP M4 - ADR-001](<assignments/IAP M4 - ADR-001>)
 
 The cumulative [`PROMPT_LOG.md`](PROMPT_LOG.md) records every AI-assisted
-change across all milestones.
+change across all milestones. Architecture decision records live in
+[`docs/adr/`](docs/adr/).
