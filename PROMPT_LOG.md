@@ -117,13 +117,13 @@ what it got right).
 ## Milestone 4: ADR-001
 
 **Prompt:**
-> Write ADR-001 for one real decision already made on this app — context,
+> Help with one real decision already made on this app — context,
 > the decision, at least two genuine alternatives with why each was
 > rejected, and consequences that name what's now harder, not only what's
 > easier. Base it on the node:sqlite-vs-ORM decision defended in the design
 > walkthrough.
 
-**Response:** Drafted a full ADR grounding the context in M1's fixed stack
+**Response:** Provided ideas for a full ADR grounding the context in M1's fixed stack
 and M3's fixed schema (one entity, no relationships), stating the decision
 (hand-written SQL over `node:sqlite`, no ORM or query builder), two
 alternatives considered (a full ORM; a query builder as a middle ground)
