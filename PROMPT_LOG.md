@@ -73,8 +73,7 @@ inventions, and correct insights, closing with a judgment that the
 elicitation defaulted to startup-scale assumptions because it was never
 asked what the project's actual constraints were).
 
-**Commit:** *(fill in after committing, e.g. `abc1234` — M2: requirements
-+ elicitation audit)*
+**Commit:** `6fdd83f` — M2: elicitation raw output + audit
 
 ---
 
@@ -112,3 +111,30 @@ adopted model — over-modelling, under-modelling, invented relationships, and
 what it got right).
 
 **Commit:** `de87c0d` — M3: domain model and AI critique
+
+---
+
+## Milestone 4: ADR-001
+
+**Prompt:**
+> Help with one real decision already made on this app — context,
+> the decision, at least two genuine alternatives with why each was
+> rejected, and consequences that name what's now harder, not only what's
+> easier. Base it on the node:sqlite-vs-ORM decision defended in the design
+> walkthrough.
+
+**Response:** Provided ideas for a full ADR grounding the context in M1's fixed stack
+and M3's fixed schema (one entity, no relationships), stating the decision
+(hand-written SQL over `node:sqlite`, no ORM or query builder), two
+alternatives considered (a full ORM; a query builder as a middle ground)
+each with a specific reason it was rejected, and a consequences section
+listing both what the decision buys (zero dependencies, transparency,
+simpler synchronous handlers) and what it costs (no enforced query
+parameterization, no migration tooling, a hand-rewrite required to change
+database engines or add concurrency).
+
+**Diff:** Added `docs/adr/ADR-001-node-sqlite-without-orm.md` and
+`assignments/IAP M4 - ADR-001/README.md` (pointer to the ADR, since it lives
+under `docs/adr/` rather than the milestone folder).
+
+**Commit:** `9e57dae` — M4: ADR-001 for node:sqlite over an ORM
