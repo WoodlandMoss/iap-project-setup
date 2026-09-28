@@ -73,8 +73,7 @@ inventions, and correct insights, closing with a judgment that the
 elicitation defaulted to startup-scale assumptions because it was never
 asked what the project's actual constraints were).
 
-**Commit:** *(fill in after committing, e.g. `abc1234` — M2: requirements
-+ elicitation audit)*
+**Commit:** `6fdd83f` — M2: elicitation raw output + audit
 
 ---
 
