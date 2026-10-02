@@ -168,4 +168,5 @@ and `walking-skeleton-evidence.png`. Modified `src/index.js` (new routes),
 `test/sanity.test.js` (updated to pass an in-memory db explicitly), and
 `.gitignore` (excludes the runtime `*.sqlite` file).
 
-**Commit:** *(fill in after committing)*
+**Commit:** `dcda3ed` — M5: walking skeleton -- real create+list slice with CI
+**CI run:** https://github.com/WoodlandMoss/iap-project-setup/actions/runs/37020974393 (success)

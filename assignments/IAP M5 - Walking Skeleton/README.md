@@ -28,7 +28,7 @@ storage (NFR-2), not an in-memory mock.
 **CI:** [`.github/workflows/ci.yml`](../../.github/workflows/ci.yml) runs
 `npm ci` and `npm test` (which includes the walking-skeleton test above) on
 every push. Green run:
-*(link added once pushed — see PROMPT_LOG.md)*
+https://github.com/WoodlandMoss/iap-project-setup/actions/runs/37020974393
 
 See the "Milestone 5" entry in [`PROMPT_LOG.md`](../../PROMPT_LOG.md) for
 the prompt-and-diff record.
