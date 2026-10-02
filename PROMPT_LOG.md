@@ -138,3 +138,34 @@ database engines or add concurrency).
 under `docs/adr/` rather than the milestone folder).
 
 **Commit:** `9e57dae` — M4: ADR-001 for node:sqlite over an ORM
+
+---
+
+## Milestone 5: Walking Skeleton
+
+**Prompt:**
+> Implement one real, end-to-end thin slice — no mocks or stubs — plus CI
+> that actually runs it. Build on ADR-001: create an assignment over real
+> HTTP, have it actually land in node:sqlite, and read it back. Set up
+> GitHub Actions to run the test suite on every push.
+
+**Response:** Added `src/db.js` (opens the SQLite file, creates the
+`assignment` table from `domain-model.mmd` if it doesn't exist) and wired
+`POST /assignments` / `GET /assignments` into `src/index.js`, with NFR-3
+validation (missing `title`/`dueDate`, or a non-ISO-8601 `dueDate`, returns
+400). Added `test/assignments.test.js`, which drives the same path over real
+HTTP against an in-memory `node:sqlite` database: create, then list, then a
+rejected invalid create. Verified the slice manually too — started the real
+server, created an assignment via `curl`, killed the process outright,
+started a fresh one on the same port, and confirmed the assignment was still
+there (proving real disk persistence, not in-process memory), captured as
+`walking-skeleton-evidence.png`. Added `.github/workflows/ci.yml` running
+`npm ci && npm test` on every push.
+
+**Diff:** Added `src/db.js`, `test/assignments.test.js`,
+`.github/workflows/ci.yml`, `assignments/IAP M5 - Walking Skeleton/README.md`
+and `walking-skeleton-evidence.png`. Modified `src/index.js` (new routes),
+`test/sanity.test.js` (updated to pass an in-memory db explicitly), and
+`.gitignore` (excludes the runtime `*.sqlite` file).
+
+**Commit:** *(fill in after committing)*

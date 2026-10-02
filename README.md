@@ -20,6 +20,12 @@ npm test
 npm start
 ```
 
+## API
+
+- `GET /health` — liveness check
+- `POST /assignments` — create an assignment (`title`, `dueDate` required; `course` optional)
+- `GET /assignments` — list all assignments, soonest due date first
+
 ## Assignments
 
 Deliverables are organized by assignment under [`assignments/`](assignments/),
@@ -29,6 +35,7 @@ one folder per milestone, named after its Canvas title:
 - [IAP M2 - Requirements and AI Elicitation Audit](<assignments/IAP M2 - Requirements and AI Elicitation Audit>)
 - [IAP M3 - Domain Model and AI Critique](<assignments/IAP M3 - Domain Model and AI Critique>)
 - [IAP M4 - ADR-001](<assignments/IAP M4 - ADR-001>)
+- [IAP M5 - Walking Skeleton](<assignments/IAP M5 - Walking Skeleton>)
 
 The cumulative [`PROMPT_LOG.md`](PROMPT_LOG.md) records every AI-assisted
 change across all milestones. Architecture decision records live in
