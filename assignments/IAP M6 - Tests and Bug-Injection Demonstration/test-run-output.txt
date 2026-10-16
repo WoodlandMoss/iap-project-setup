@@ -1,0 +1,114 @@
+
+> iap-project-setup@0.1.0 test
+> node --test
+
+TAP version 13
+# (node:1762) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: walking skeleton: create an assignment, then see it in the list
+ok 1 - walking skeleton: create an assignment, then see it in the list
+  ---
+  duration_ms: 121.304715
+  type: 'test'
+  ...
+# Subtest: rejects creating an assignment with no title (NFR-3)
+ok 2 - rejects creating an assignment with no title (NFR-3)
+  ---
+  duration_ms: 15.743823
+  type: 'test'
+  ...
+# (node:1763) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: test runner is working
+ok 3 - test runner is working
+  ---
+  duration_ms: 0.781185
+  type: 'test'
+  ...
+# Subtest: app boots and responds on /health
+ok 4 - app boots and responds on /health
+  ---
+  duration_ms: 111.661522
+  type: 'test'
+  ...
+# Subtest: isValidDate accepts a well-formed ISO-8601 calendar date
+ok 5 - isValidDate accepts a well-formed ISO-8601 calendar date
+  ---
+  duration_ms: 1.484779
+  type: 'test'
+  ...
+# Subtest: isValidDate rejects a slash-separated date
+ok 6 - isValidDate rejects a slash-separated date
+  ---
+  duration_ms: 0.335294
+  type: 'test'
+  ...
+# Subtest: isValidDate rejects a date missing leading zeros
+ok 7 - isValidDate rejects a date missing leading zeros
+  ---
+  duration_ms: 0.195895
+  type: 'test'
+  ...
+# Subtest: isValidDate rejects a non-date string
+ok 8 - isValidDate rejects a non-date string
+  ---
+  duration_ms: 0.238172
+  type: 'test'
+  ...
+# Subtest: isValidDate rejects an empty string
+ok 9 - isValidDate rejects an empty string
+  ---
+  duration_ms: 0.266407
+  type: 'test'
+  ...
+# Subtest: isValidDate rejects a non-string value
+ok 10 - isValidDate rejects a non-string value
+  ---
+  duration_ms: 0.137821
+  type: 'test'
+  ...
+# Subtest: validateAssignmentInput accepts a title and a valid dueDate
+ok 11 - validateAssignmentInput accepts a title and a valid dueDate
+  ---
+  duration_ms: 4.023489
+  type: 'test'
+  ...
+# Subtest: validateAssignmentInput rejects a missing title
+ok 12 - validateAssignmentInput rejects a missing title
+  ---
+  duration_ms: 0.30753
+  type: 'test'
+  ...
+# Subtest: validateAssignmentInput rejects an empty-string title
+ok 13 - validateAssignmentInput rejects an empty-string title
+  ---
+  duration_ms: 0.457237
+  type: 'test'
+  ...
+# Subtest: validateAssignmentInput rejects a missing dueDate
+ok 14 - validateAssignmentInput rejects a missing dueDate
+  ---
+  duration_ms: 0.553931
+  type: 'test'
+  ...
+# Subtest: validateAssignmentInput rejects a malformed dueDate
+ok 15 - validateAssignmentInput rejects a malformed dueDate
+  ---
+  duration_ms: 0.255002
+  type: 'test'
+  ...
+# Subtest: validateAssignmentInput does not require course
+ok 16 - validateAssignmentInput does not require course
+  ---
+  duration_ms: 0.161311
+  type: 'test'
+  ...
+1..16
+# tests 16
+# suites 0
+# pass 16
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 435.906359

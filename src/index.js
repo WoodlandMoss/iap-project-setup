@@ -1,7 +1,6 @@
 const express = require('express');
 const { createDb } = require('./db');
-
-const DATE_RE = /^\d{4}-\d{2}-\d{2}$/;
+const { validateAssignmentInput } = require('./validation');
 
 function createApp(db = createDb()) {
   const app = express();
@@ -13,10 +12,9 @@ function createApp(db = createDb()) {
 
   app.post('/assignments', (req, res) => {
     const { title, course, dueDate } = req.body || {};
-    if (!title || !dueDate || !DATE_RE.test(dueDate)) {
-      return res
-        .status(400)
-        .json({ error: 'title and a valid dueDate (YYYY-MM-DD) are required' });
+    const validation = validateAssignmentInput({ title, dueDate });
+    if (!validation.ok) {
+      return res.status(400).json({ error: validation.error });
     }
 
     const stmt = db.prepare(
