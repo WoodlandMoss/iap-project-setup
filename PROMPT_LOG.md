@@ -228,4 +228,4 @@ Added `assignments/IAP M6 - Tests and Bug-Injection Demonstration/` with
 (`1-fault-diff.patch`, `2-suite-failing.txt`, `3-suite-fixed.txt`,
 `README.md` narrating the find-gap-close-gap story).
 
-**Commit:** *(fill in after committing)*
+**Commit:** `f16beae` — M6: bug-injection demonstration -- swapped course/dueDate args
