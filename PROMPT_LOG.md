@@ -170,3 +170,62 @@ and `walking-skeleton-evidence.png`. Modified `src/index.js` (new routes),
 
 **Commit:** `dcda3ed` — M5: walking skeleton -- real create+list slice with CI
 **CI run:** https://github.com/WoodlandMoss/iap-project-setup/actions/runs/37020974393 (success)
+
+---
+
+## Milestone 6: Tests and Bug-Injection Demonstration
+
+**Prompt 1 (test restructuring):**
+> Write an acceptance test for the M5 thin slice and unit tests for the
+> logic underneath it, plus a coverage report. Extract the inline
+> validation out of the Express handler first so it's actually
+> unit-testable.
+
+**Response:** Added `src/validation.js` (`isValidDate`,
+`validateAssignmentInput`), pulled out of the `POST /assignments` handler
+so it's testable without HTTP or a database. Renamed
+`test/assignments.test.js` to `test/acceptance.assignments.test.js` to make
+explicit it's the acceptance layer. Added `test/unit.validation.test.js`
+(12 cases: missing/empty title, missing/malformed `dueDate` in several
+shapes, course optional). Added `npm run test:coverage` using Node's
+built-in `--experimental-test-coverage` (no new dependency). Result: 16/16
+passing, 97%+ line coverage.
+
+**Diff:** Added `src/validation.js`, `test/unit.validation.test.js`.
+Renamed `test/assignments.test.js` to `test/acceptance.assignments.test.js`.
+Modified `src/index.js` (uses `validateAssignmentInput`), `package.json`
+(`test:coverage` script).
+
+**Commit:** `331a151` — M6: extract validation, split acceptance/unit tests, add coverage
+
+---
+
+**Prompt 2 (bug injection, chosen collaboratively):**
+> Pick 2-3 candidate faults for the bug-injection demonstration and explain
+> the tradeoffs; after discussion, inject the chosen one, run the suite,
+> capture the failure, fix it, and capture the suite passing again.
+
+**Response:** Proposed four candidates (sort-order flip, a weakened boolean
+in validation, a dropped regex anchor, and an argument-order swap in the
+insert call) with a prediction of which the existing suite would or
+wouldn't catch. Selected, with the user: swapping the `course`/`dueDate`
+arguments passed to `stmt.run(...)` in `POST /assignments` — realistic bug
+class, immediately visible to a user, and (confirmed) invisible to the
+existing suite, since the acceptance test only asserted `id`/`title` on the
+`GET` response. Manually verified the corruption via direct requests before
+touching tests. Added the missing `course`/`dueDate`/`status` assertions to
+`test/acceptance.assignments.test.js`, confirmed the suite now fails
+(15 pass, 1 fail) with the fault present, reverted the fault, confirmed
+16/16 passing again. Also fixed a real bug found along the way: the
+acceptance tests didn't close their HTTP server when an assertion threw,
+which hung `node --test` instead of reporting a clean failure; wrapped both
+acceptance tests and the sanity test in `try`/`finally`.
+
+**Diff:** Modified `test/acceptance.assignments.test.js` (new assertions,
+`try`/`finally` cleanup), `test/sanity.test.js` (`try`/`finally` cleanup).
+Added `assignments/IAP M6 - Tests and Bug-Injection Demonstration/` with
+`test-run-output.txt`, `coverage-report.txt`, and `bug-injection/`
+(`1-fault-diff.patch`, `2-suite-failing.txt`, `3-suite-fixed.txt`,
+`README.md` narrating the find-gap-close-gap story).
+
+**Commit:** *(fill in after committing)*
