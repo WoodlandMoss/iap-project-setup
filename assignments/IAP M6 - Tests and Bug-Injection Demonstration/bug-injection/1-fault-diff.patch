@@ -1,0 +1,13 @@
+diff --git a/src/index.js b/src/index.js
+index 4bc6ac1..3acef18 100644
+--- a/src/index.js
++++ b/src/index.js
+@@ -20,7 +20,7 @@ function createApp(db = createDb()) {
+     const stmt = db.prepare(
+       'INSERT INTO assignment (title, course, dueDate, status) VALUES (?, ?, ?, ?)'
+     );
+-    const { lastInsertRowid } = stmt.run(title, course || null, dueDate, 'open');
++    const { lastInsertRowid } = stmt.run(title, dueDate, course || null, 'open');
+ 
+     res.status(201).json({
+       id: lastInsertRowid,

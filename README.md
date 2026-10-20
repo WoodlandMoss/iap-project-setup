@@ -17,6 +17,7 @@ one place instead of scattered across syllabi.
 ```bash
 npm install
 npm test
+npm run test:coverage
 npm start
 ```
 
@@ -36,6 +37,7 @@ one folder per milestone, named after its Canvas title:
 - [IAP M3 - Domain Model and AI Critique](<assignments/IAP M3 - Domain Model and AI Critique>)
 - [IAP M4 - ADR-001](<assignments/IAP M4 - ADR-001>)
 - [IAP M5 - Walking Skeleton](<assignments/IAP M5 - Walking Skeleton>)
+- [IAP M6 - Tests and Bug-Injection Demonstration](<assignments/IAP M6 - Tests and Bug-Injection Demonstration>)
 
 The cumulative [`PROMPT_LOG.md`](PROMPT_LOG.md) records every AI-assisted
 change across all milestones. Architecture decision records live in
