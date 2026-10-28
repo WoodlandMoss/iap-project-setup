@@ -17,18 +17,16 @@ function createApp(db = createDb()) {
       return res.status(400).json({ error: validation.error });
     }
 
-    const stmt = db.prepare(
+    const insertStmt = db.prepare(
       'INSERT INTO assignment (title, course, dueDate, status) VALUES (?, ?, ?, ?)'
     );
-    const { lastInsertRowid } = stmt.run(title, course || null, dueDate, 'open');
+    const { lastInsertRowid } = insertStmt.run(title, course || null, dueDate, 'open');
 
-    res.status(201).json({
-      id: lastInsertRowid,
-      title,
-      course: course || null,
-      dueDate,
-      status: 'open',
-    });
+    const created = db
+      .prepare('SELECT * FROM assignment WHERE id = ?')
+      .get(lastInsertRowid);
+
+    res.status(201).json(created);
   });
 
   app.get('/assignments', (req, res) => {
