@@ -266,4 +266,4 @@ inserted row instead of reconstructing a response from input). Added
 `1-test-output-before.txt`, `2-test-output-after.txt`,
 `3-refactor-diff.patch`, `NOTE.md`, and `README.md`.
 
-**Commit:** *(fill in after committing)*
+**Commit:** `4db9612` — M7: documented refactor -- POST reads back its own write
