@@ -229,3 +229,41 @@ Added `assignments/IAP M6 - Tests and Bug-Injection Demonstration/` with
 `README.md` narrating the find-gap-close-gap story).
 
 **Commit:** `f16beae` — M6: bug-injection demonstration -- swapped course/dueDate args
+
+---
+
+## Milestone 7: Documented Refactor
+
+**Prompt:**
+> Identify something in the codebase that's genuinely worse than it
+> should be, name the smell, refactor it, run the same M6 test set before
+> and after unchanged, and write a short note on what was wrong, what
+> changed, and what's now easier.
+
+**Response:** Considered five candidates before picking one: deduplicating
+the repeated `course || null` normalization, deduplicating the repeated
+validation error string, extracting a `createAssignment(db, input)`
+service function (ruled out as speculative — nothing discovered motivates
+it yet, the exact anti-pattern Session 9 warns against), deduplicating
+test-setup boilerplate between `sanity.test.js` and
+`acceptance.assignments.test.js`, and fixing `POST /assignments`'s
+response to reflect the persisted row instead of echoing the request.
+Picked the last one: it's the only candidate traceable to a real, already
+proven failure mode — it's the structural root cause of the M6
+bug-injection finding (a swapped-column corruption a correct-looking
+`POST` response completely hid, because the response never actually
+checked what was stored). Ran the existing 16-test suite before touching
+anything (16/16 passing), refactored `POST /assignments` in `src/index.js`
+to `INSERT` then re-select the created row by id and return it directly,
+ran the same 16 tests again (16/16 passing, diffed byte-for-byte identical
+test names/order against the before run), and manually confirmed via
+direct HTTP requests that the real response now reflects the real
+database row.
+
+**Diff:** Modified `src/index.js` (`POST /assignments` now reads back the
+inserted row instead of reconstructing a response from input). Added
+`assignments/IAP M7 - Documented Refactor/` with
+`1-test-output-before.txt`, `2-test-output-after.txt`,
+`3-refactor-diff.patch`, `NOTE.md`, and `README.md`.
+
+**Commit:** `4db9612` — M7: documented refactor -- POST reads back its own write

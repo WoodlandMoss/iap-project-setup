@@ -38,6 +38,7 @@ one folder per milestone, named after its Canvas title:
 - [IAP M4 - ADR-001](<assignments/IAP M4 - ADR-001>)
 - [IAP M5 - Walking Skeleton](<assignments/IAP M5 - Walking Skeleton>)
 - [IAP M6 - Tests and Bug-Injection Demonstration](<assignments/IAP M6 - Tests and Bug-Injection Demonstration>)
+- [IAP M7 - Documented Refactor](<assignments/IAP M7 - Documented Refactor>)
 
 The cumulative [`PROMPT_LOG.md`](PROMPT_LOG.md) records every AI-assisted
 change across all milestones. Architecture decision records live in
