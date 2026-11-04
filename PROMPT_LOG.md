@@ -333,5 +333,4 @@ Claude's assistance is recorded here, in this log.
     (pass `silentLogger`)
   - `README.md` (logging/operations section, M8 link)
 
-**Commit:** see the M8 commit on branch `claude/modest-noether-b418qj`
-(hash filled in after commit).
+**Commit:** `32697f5` — M8: structured JSON logging with request IDs, and runbook RB-001
