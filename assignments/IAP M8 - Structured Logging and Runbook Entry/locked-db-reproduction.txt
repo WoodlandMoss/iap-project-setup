@@ -1,9 +1,0 @@
-$ curl -i -X POST localhost:3088/assignments ... (while another process holds a write lock)
-HTTP/1.1 500 Internal Server Error
-X-Request-Id: demo-locked-02
-{"error":"internal error","requestId":"demo-locked-02"}
-
-$ lsof data.sqlite
-COMMAND PID USER   FD   TYPE DEVICE SIZE/OFF   NODE NAME
-node    763 root   20u   REG  254,0    12288 680008 data.sqlite
-node    774 root   20ur  REG  254,0    12288 680008 data.sqlite

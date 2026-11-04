@@ -2,10 +2,9 @@ const test = require('node:test');
 const assert = require('node:assert');
 const { createApp } = require('../src/index.js');
 const { createDb } = require('../src/db.js');
-const { silentLogger } = require('../src/logger.js');
 
 function startApp() {
-  const app = createApp(createDb(':memory:'), { logger: silentLogger });
+  const app = createApp(createDb(':memory:'));
   const server = app.listen(0);
   const { port } = server.address();
   return { server, baseUrl: `http://localhost:${port}` };
