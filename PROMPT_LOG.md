@@ -333,4 +333,7 @@ Claude's assistance is recorded here, in this log.
     (pass `silentLogger`)
   - `README.md` (logging/operations section, M8 link)
 
-**Commit:** the single M8 commit merged to `main` ("M8: structured JSON logging with request IDs, and runbook RB-001"). It was first merged as PR #9 and reverted, then re-submitted as one GitHub-signed commit so it shows as Verified. The code is the same in both.
+**Commits:** first merged as PR #9 (`32697f5`, `3c0f14c`), then reverted in
+PR #10 because those commits showed as Unverified on GitHub. The same
+content was re-submitted as PR #11 (`3def689`, `82a119d`) and merged with
+a GitHub-signed merge commit (`e4ec9df`).
