@@ -27,6 +27,18 @@ npm start
 - `POST /assignments` — create an assignment (`title`, `dueDate` required; `course` optional)
 - `GET /assignments` — list all assignments, soonest due date first
 
+Every response carries an `X-Request-Id` header (the caller's own, if it
+sent a valid one). 500 responses also include it in the body.
+
+## Logging and operations
+
+The app logs one JSON object per line to stdout. Every line has `ts`,
+`level`, `event` and `requestId`; set `LOG_LEVEL` (`debug`, `info`,
+`warn`, `error`) to change verbosity. To trace one request:
+`jq -c 'select(.requestId=="<id>")' app.log`.
+
+Runbook entries live in [`docs/runbook/`](docs/runbook/).
+
 ## Assignments
 
 Deliverables are organized by assignment under [`assignments/`](assignments/),
@@ -39,7 +51,9 @@ one folder per milestone, named after its Canvas title:
 - [IAP M5 - Walking Skeleton](<assignments/IAP M5 - Walking Skeleton>)
 - [IAP M6 - Tests and Bug-Injection Demonstration](<assignments/IAP M6 - Tests and Bug-Injection Demonstration>)
 - [IAP M7 - Documented Refactor](<assignments/IAP M7 - Documented Refactor>)
+- [IAP M8 - Structured Logging and Runbook Entry](<assignments/IAP M8 - Structured Logging and Runbook Entry>)
 
 The cumulative [`PROMPT_LOG.md`](PROMPT_LOG.md) records every AI-assisted
 change across all milestones. Architecture decision records live in
-[`docs/adr/`](docs/adr/).
+[`docs/adr/`](docs/adr/), and runbook entries in
+[`docs/runbook/`](docs/runbook/).
