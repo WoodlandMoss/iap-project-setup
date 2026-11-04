@@ -2,14 +2,13 @@ const test = require('node:test');
 const assert = require('node:assert');
 const { createApp } = require('../src/index.js');
 const { createDb } = require('../src/db.js');
-const { silentLogger } = require('../src/logger.js');
 
 test('test runner is working', () => {
   assert.strictEqual(1 + 1, 2);
 });
 
 test('app boots and responds on /health', async () => {
-  const app = createApp(createDb(':memory:'), { logger: silentLogger });
+  const app = createApp(createDb(':memory:'));
   const server = app.listen(0);
   const { port } = server.address();
 
